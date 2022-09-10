@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: httptester
+  namespace: ziox1
+spec:
+  selector:
+    app: httptester
+  ports:
+  - port: 6080
+    targetPort: 6080
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: httptester
+  namespace: ziox1
+spec:
+  selector:
+    matchLabels:
+      app: httptester
+  template:
+    metadata:
+      labels:
+        app: httptester
+    spec:
+      containers:
+      - name: httptester
+        image: public.ecr.aws/zinclabs/httptester
+        resources: {}
+          # limits:
+          #   memory: "128Mi"
+          #   cpu: "500m"
+        ports:
+        - containerPort: 6080
