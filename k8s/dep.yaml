@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: httptester
-        image: public.ecr.aws/zinclabs/httptester
+        image: public.ecr.aws/zinclabs/httptester:v0.0.1-2f8fb24
         resources: {}
           # limits:
           #   memory: "128Mi"
