@@ -9,6 +9,8 @@ func main() {
 	r := gin.Default()
 
 	r.GET("/", base.GET)
+	r.POST("/", base.Post)
+	r.PUT("/", base.Post)
 	r.POST("/api/_bulk", base.Post)
 
 	// Opentelemetry
