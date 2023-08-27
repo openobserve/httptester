@@ -10,6 +10,7 @@ func main() {
 
 	r.GET("/", base.GET)
 	r.POST("/", base.Post)
+	r.POST("/_bulk", base.Post)
 	r.PUT("/", base.Post)
 	r.POST("/api/_bulk", base.Post)
 
